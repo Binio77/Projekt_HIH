@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobby</title>
+    <link rel="stylesheet" href = "style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <a id="top"></a>
+    <div id="navbar">
+        <img src="img/paradox-logo.svg" alt="paradox logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Main page</a></li>
+                    <li><a href="eu.html">Europa Universalis IV</a></li>
+                    <li><a href="ck.html">Crusader Kings III</a></li>
+                    <li><a href="victoria.html">Victoria III</a></li>
+                    <li><a href="hoi.html">Hearts of Iron IV</a></li>
+                    <li><a href="galery.html">Gallery</a></li>
+                </ul>
+            </nav>
+    </div>
+    <div class="container">
+        <div class="content">
+            <a href="#profile" class="profile">Go to Form</a>
+            <h2>Paradox Interactive Grand Strategy Video Games</h2>
+            <h3>Some words about Paradox Interactive</h3>
+            <p>
+                Paradox Interactive AB is a video game publisher based in Stockholm, Sweden. The company started out as the video game division of Target Games and then Paradox Entertainment (now Cabinet Entertainment) before being spun out into an independent company in 2004. Through a combination of expanding internal studios, founding new studios and purchasing independent developers, the company has grown to comprise nine first-party development studios, including their flagship Paradox Development Studio, and acts as publisher for games from other developers.
+
+                Paradox is best known for releasing historically themed strategy video games, especially grand strategy games, and has published strategy games in different settings, as well as games of other genres such as role-playing video games and management simulators. They typically continue development of their games after initial release with the creation of downloadable content, and are also known for creating games that are easy to mod.
+
+                Outside of video games, Paradox has created board games based on several of its titles, and owns the rights to the tabletop role-playing game series World of Darkness since purchasing White Wolf Publishing in 2015. They hold an annual convention, PDXCon, which has been open to the public since 2017. 
+            </p>
+            <h3>What is grand strategy video game?</h3>
+            <p>
+                A grand strategy game (GSG) is a wargame that places focus on grand strategy: military strategy at the level of movement and use of a nation state or empire's resources. It is a genre that has considerable overlap with 4X games, but differs in being "asymmetrical", meaning that players are more bound to a specific setup and not among equally free factions in exploring and progressing the game and an open world.
+            </p>
+            <h3>Steam game sold</h3>
+            <div class="games">
+                <table>
+                    <tr>
+                        <th>Game</th>
+                        <th>Steam Sells</th>
+                    </tr>
+                    <tr>
+                        <td>Europa Universalis IV</td>
+                        <td>5,000,000</td>
+                    </tr>
+                    <tr>
+                        <td>Crusader Kings III</td>
+                        <td>5,000,000</td>
+                    </tr>
+                    <tr>
+                        <td>Victoria III</td>
+                        <td>1,000,000</td>
+                    </tr>
+                    <tr>
+                        <td>Hearts of Iron IV</td>
+                        <td>10,000,000</td>
+                    </tr>
+                </table>
+            </div>
+            <a id="profile"></a>
+            <h3>Your profile</h3>
+            <form>
+                <label for="fname">First name</label><br>
+                <input type="text" id="fname" name = "fname"><br>
+                <label for="lname">Last name</label><br>
+                <input type="text" id="lname" name = "lname"><br>
+                <label for="Nname">Nickname</label><br>
+                <input type="text" id="Nname" name = "Nickname"><br><br>
+
+                <h4>Sex</h4>
+                <input type="checkbox" id="male" name="male" value="male">
+                <label for="male">Male</label><br>
+                <input type="checkbox" id="female" name="female" value="female">
+                <label for="female">Female</label><br>
+                <input type="checkbox" id="other" name="other" value="other">
+                <label for="other">Other</label><br><br>
+
+                <label for="birth">Birthday</label><br>
+                <input type="date" id="birth" name="birth"><br><br>
+                
+                <h4>Favorite Paradox Grand Strategy game</h4>
+                <input type="radio" id="EU4" name="favorite_game" value="Europa universalis IV">
+                <label for="EU4">Europa universalis IV</label><br>
+                <input type="radio" id="CK3" name="favorite_game" value="Crusader Kings III">
+                <label for="CK3">Crusader Kings III</label><br>
+                <input type="radio" id="VIC3" name="favorite_game" value="Victoria III">
+                <label for="VIC3">Victoria III</label><br>
+                <input type="radio" id="HOI4" name="favorite_game" value="Hearts of Iron IV">
+                <label for="HOI4">Hearts of Iron IV</label><br><br>
+
+                <label for="GreatNation">Favorite Great Nation</label><br>
+                <select name="GreatNation" id="GreatNation">
+                    <option value="empty">&nbsp;</option>
+                    <option value="France">France</option>
+                    <option value="GreatBritain">Great Britain</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Germany">Germany</option>
+                </select><br><br>
+
+                <h4>What improvements would you like to see in your favorite grand strategy game?</h4>
+                <br>
+                <textarea rows = "10" cols = "100" name = "improvements"></textarea><br><br>
+                <input type="submit" value="Submit">
+		        <input type="reset" value="Reset">
+            </form>
+        </div>
+    </div>
+    <footer>
+        <ul>
+            <li><a href="#top" class="top">Go to the top</a></li>
+            <li><img src="img/arrow-up.svg" alt="arrow"></li>
+            <li><h4> &#169; Artur Binczyk 2022</h4></li>
+            
+        </ul>
+    </footer>
+</body>
+</html>

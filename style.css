@@ -1,0 +1,283 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+#navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #202124;
+    margin: auto 0;
+}
+
+
+.container{
+    width: 100%;
+    min-height: 80vh;
+    padding-left: 8%;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #1c1e21;
+}
+
+.logo{
+    width:80px;
+    cursor: pointer;
+    margin: 40px 40px;
+    filter: invert(98%) sepia(3%) saturate(194%) hue-rotate(180deg) brightness(95%) contrast(96%);
+}
+
+nav{
+    flex:1;
+    text-align: right;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #e8eaed;
+    font-size: 23px;
+    font-family: 'Merriweather Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+nav ul li a:hover{
+    color: #8ab4f8;
+}
+nav ul li a:active{
+    font-weight: 1000;
+}
+
+.profile{
+    float: right;
+    text-decoration: none;
+    color: #e8eaed;
+    font-size: 20px;
+    font-weight: 100;
+    margin: 0 50px;
+}
+.profile:hover{
+    color: #8ab4f8;
+}
+
+.content{
+    font-family: 'Nunito', sans-serif;
+    align-items: center;
+    flex-basis: 40%;
+    position: relative;
+    margin: 30px 50px;
+    color:#e8eaed;
+}
+.content h2{
+    font-size: 54px;
+}
+.content h3{
+    font-size: 30px;
+    font-weight: 100;
+    margin: 20px 0 10px;
+}
+.content p{
+    font-size: 16px;
+    font-weight: 100;
+}
+.content p{
+    
+    font-size: 20px;
+    margin:30px 0;
+}
+
+.content img
+{
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-right: 100px;
+    border-radius: 25px;
+}
+.games table{
+    width: 100%;
+    height: auto;
+    border-color:#e8eaed;
+    border: 2px solid;
+    margin-bottom: 15px;
+}
+.games table th{
+    text-align: left;
+    font-size: 20px;
+    animation: color-change 2s infinite;
+}
+.games table tr td{
+    border-color:#e8eaed;
+    border: 2px solid;
+    font-size: 20px;
+}
+
+
+footer{
+    padding-left: 8%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #1c1e21;
+    height: 10vh;
+}
+
+footer ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+    text-align: right;
+}
+
+footer h4{
+    font-size: 20px;
+    color: #e8eaed;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 100;
+    margin: 0 50px;
+}
+footer .top:hover
+{
+    color: #8ab4f8;
+}
+footer .top{
+    float: right;
+    text-decoration: none;
+    color: #e8eaed;
+    font-size: 20px;
+    font-weight: 100;
+    margin: 0 50px;
+}
+
+form{
+    font-size: 18px;
+    font-weight: 100;
+}
+form h4{
+    font-weight: 100;
+}
+
+
+input[type="text"]{
+    font-size: 17px;
+    width: 25%;
+    height: auto;
+    background-color:#e8eaed;
+}
+textarea
+{
+    width: 100%;
+    height: auto;
+    font-size: 17px;
+    background-color:#e8eaed;
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:#e8eaed; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    width: 40%;
+    height: auto;
+    margin-right: 10%;
+}
+input[type=reset] {
+    padding:5px 15px; 
+    background:#e8eaed; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    width: 40%;
+    height: auto;
+}
+
+.photo img{
+    margin: 5px;
+    float: left;
+    width: 500px;
+    height: auto;
+    position:initial;
+    border-radius: 25px;
+    
+}
+footer img{
+    transition: 1s;
+    width:30px;
+    float: left;
+    filter: invert(98%) sepia(3%) saturate(194%) hue-rotate(180deg) brightness(95%) contrast(96%);
+}
+footer img:hover
+{
+    width: 50px;
+}
+
+
+@keyframes color-change {
+    0% { color: #8ab4f8; }
+    50% { color: #e8eaed; }
+    100% { color: #8ab4f8; }
+}
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+@media only screen and (max-width:700px)
+{
+    nav{
+        margin: 20px 0;
+        text-align: center;
+    }
+    .content h2{
+        font-size: 30px;
+    }
+    .content h3{
+        font-size: 22px;
+    }
+    .content p{
+        font-size: 16px;
+    }
+    nav ul{
+        width: 100%;
+        background-color: #202124;
+        top: 75px;
+        right: 0;
+        z-index: 2;
+    }
+    nav ul li{
+        display: block;
+        margin-bottom: 10px;
+        
+    }
+    nav ul li a{
+        color:#e8eaed;
+        font-size: 18px;
+    }
+    .profile
+    {
+        float: none;
+
+    }
+    #menu{
+        overflow: hidden;
+    }
+    input[type="text"]{
+        width: 100%;
+        height: auto;
+    }
+    .photo img
+    {
+        width: 80%;
+        height: auto;
+
+    }
+}
