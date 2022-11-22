@@ -30,6 +30,16 @@
     filter: invert(98%) sepia(3%) saturate(194%) hue-rotate(180deg) brightness(95%) contrast(96%);
 }
 
+#navbar nav input{
+    display: none;
+}
+
+
+#navbar nav label{
+    display: none;
+    padding-right: 20%;
+}
+
 nav{
     flex:1;
     text-align: right;
@@ -154,6 +164,17 @@ footer .top{
     margin: 0 50px;
 }
 
+footer img{
+    transition: 1s;
+    width:30px;
+    float: left;
+    filter: invert(98%) sepia(3%) saturate(194%) hue-rotate(180deg) brightness(95%) contrast(96%);
+}
+footer img:hover
+{
+    width: 50px;
+}
+
 form{
     font-size: 18px;
     font-weight: 100;
@@ -208,22 +229,27 @@ input[type=reset] {
     border-radius: 25px;
     
 }
-footer img{
-    transition: 1s;
-    width:30px;
-    float: left;
-    filter: invert(98%) sepia(3%) saturate(194%) hue-rotate(180deg) brightness(95%) contrast(96%);
-}
-footer img:hover
-{
-    width: 50px;
-}
 
+
+.container .content a{
+    text-decoration: none;
+}
 
 @keyframes color-change {
     0% { color: #8ab4f8; }
     50% { color: #e8eaed; }
     100% { color: #8ab4f8; }
+}
+
+.source_links{
+    font-size: 70px;
+    font-weight: 100;
+    margin: 20px 0 10px;
+    text-decoration: none;
+    color:#e8eaed
+}
+.source_links:hover{
+    color: #8ab4f8;
 }
 
 
@@ -235,7 +261,6 @@ html{
 {
     nav{
         margin: 20px 0;
-        text-align: center;
     }
     .content h2{
         font-size: 30px;
@@ -260,15 +285,7 @@ html{
     }
     nav ul li a{
         color:#e8eaed;
-        font-size: 18px;
-    }
-    .profile
-    {
-        float: none;
-
-    }
-    #menu{
-        overflow: hidden;
+        font-size: 20px;
     }
     input[type="text"]{
         width: 100%;
@@ -279,5 +296,28 @@ html{
         width: 80%;
         height: auto;
 
+    }
+    #navbar nav label{
+        display: block;
+        filter: invert(92%) sepia(1%) saturate(521%) hue-rotate(177deg) brightness(105%) contrast(90%);
+    }
+    nav ul{
+        display: none;
+    }
+
+    nav input[type="checkbox"]:checked~ul{
+        display: block;
+    }
+    .source_links{
+        font-size: 45px;
+    }
+    footer h4{
+        display: none;
+    }
+    footer .top{
+        display: 15px;
+    }
+    footer img{
+        display: none;
     }
 }
