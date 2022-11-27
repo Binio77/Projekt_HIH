@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="site">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="studio" type="studio_type"></xs:element>
+                <xs:element name="photo_galery" minOccurs="1" maxOccurs="4">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="photo" minOccurs="1" maxOccurs="4">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:anyURI">
+                                            <xs:attribute ref="number"></xs:attribute>
+                                            <xs:attribute ref="games_list"></xs:attribute>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="games">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="game" minOccurs="1" maxOccurs="4">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="title" type="title_string"></xs:element>
+                                        <xs:element name="about">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="development" type="long_string"></xs:element>
+                                                    <xs:element name="gameplay" type="long_string"></xs:element>
+                                                    <xs:element name="legacy" type="long_string"></xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="time">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="start" type="date_type">
+                                                    </xs:element>
+                                                    <xs:element name="end" type="date_type">
+                                                    </xs:element>
+                                                    
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="wiki_link">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute name="wiki" type="xs:anyURI" use="required"/>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="release"></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="links" type="link_type" maxOccurs="4" minOccurs="1"></xs:element>
+                <xs:element name="Game_sold" type="array" minOccurs="0" maxOccurs="1"></xs:element>
+                <xs:element name="stock_value">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="studio_name" type="title_string"></xs:element>
+                            <xs:element name="value">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+                                        <xs:minExclusive value="0.00"></xs:minExclusive>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="currency"></xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="sources" type="sources_type" minOccurs="0" maxOccurs="unbounded"></xs:element>
+                <xs:element name="author" type="author_type" minOccurs="0" maxOccurs="1"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:attribute name="source" type="xs:anyURI"/>
+
+    <xs:complexType name="date_type">
+        <xs:simpleContent>
+            <xs:extension base="xs:gYear">
+                <xs:attribute name="era">
+					<xs:simpleType>
+						<xs:restriction base="short_string">
+							<xs:enumeration value="BC"/>
+							<xs:enumeration value="AD"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name="short_string">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"></xs:minLength>
+            <xs:maxLength value="10"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="long_string">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="20"></xs:minLength>
+            <xs:maxLength value="100000"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="title_string">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"></xs:minLength>
+            <xs:maxLength value="25"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:attribute name="number" type="number_type"></xs:attribute>
+    <xs:simpleType name="number_type">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"></xs:minInclusive>
+            <xs:maxInclusive value="4"></xs:maxInclusive>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:attribute name="games_list" type="games_type"></xs:attribute>
+    <xs:simpleType name="games_type">
+        <xs:restriction base="title_string">
+            <xs:enumeration value="Europa Universalis IV"></xs:enumeration>
+            <xs:enumeration value="Crusader Kings III"></xs:enumeration>
+            <xs:enumeration value="Hearts Of Iron IV"></xs:enumeration>
+            <xs:enumeration value="Victoria III"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="name_list_type">
+        <xs:list itemType="xs:string"></xs:list>
+    </xs:simpleType>
+
+    <xs:complexType name="name_type">
+        <xs:simpleContent>
+            <xs:extension base="name_list_type">
+                <xs:attribute name="age">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:minExclusive value="1"></xs:minExclusive>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:group name="author_group">
+        <xs:sequence>
+            <xs:element name="name" type="name_type"></xs:element>
+            <xs:element name="surname">
+                <xs:simpleType>
+                    <xs:union memberTypes="short_string title_string"></xs:union>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="author_type">
+        <xs:choice>
+            <xs:group ref="author_group"></xs:group>
+            <xs:element name="no_authour"></xs:element>
+        </xs:choice>
+    </xs:complexType>
+
+
+
+    <xs:complexType name="link_type">
+        <xs:sequence>
+            <xs:element name="link" type="xs:anyURI" minOccurs="1" maxOccurs="4"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="array">
+        <xs:sequence>
+            <xs:element name="headlines" type="xs:string"></xs:element>
+            <xs:element name="game_name" type="long_string"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="number" >
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:minExclusive value="0"></xs:minExclusive>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="studio_type">
+        <xs:sequence>
+            <xs:element name="studio_description" type="about_studio_type"></xs:element>
+            <xs:element name="beggining" type="xs:gYear"></xs:element>
+        </xs:sequence>
+        <xs:attribute ref="source"></xs:attribute>
+    </xs:complexType>
+    
+    <xs:complexType name="about_studio_type">
+        <xs:sequence>
+            <xs:element name="title" type="title_string"></xs:element>
+            <xs:element name="studio_history" type="long_string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="sources_type">
+        <xs:sequence>
+            <xs:element name="source_title"></xs:element>
+        </xs:sequence>
+        <xs:attribute ref="source"></xs:attribute>
+    </xs:complexType>
+
+    
+
+</xs:schema>
