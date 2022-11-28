@@ -315,7 +315,7 @@ html{
         display: none;
     }
     footer .top{
-        display: 15px;
+        font-size: 15px;
     }
     footer img{
         display: none;
